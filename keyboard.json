@@ -1,0 +1,386 @@
+{
+    "Backquote": {
+        "en": "`",
+        "ru": "ё",
+        "RU": "Ё",
+        "EN": "~"
+    },
+    "Digit1": {
+        "en": "1",
+        "ru": "1",
+        "RU": "!",
+        "EN": "!"
+    },
+    "Digit2": {
+        "en": "2",
+        "ru": "2",
+        "RU": "\"",
+        "EN": "@"
+    },
+    "Digit3": {
+        "en": "3",
+        "ru": "3",
+        "RU": "№",
+        "EN": "#"
+    },
+    "Digit4": {
+        "en": "4",
+        "ru": "4",
+        "RU": ";",
+        "EN": "$"
+    },
+    "Digit5": {
+        "en": "5",
+        "ru": "5",
+        "RU": "%",
+        "EN": "%"
+    },
+    "Digit6": {
+        "en": "6",
+        "ru": "6",
+        "RU": ":",
+        "EN": "^"
+    },
+    "Digit7": {
+        "en": "7",
+        "ru": "7",
+        "RU": "?",
+        "EN": "&"
+    },
+    "Digit8": {
+        "en": "8",
+        "ru": "8",
+        "RU": "*",
+        "EN": "*"
+    },
+    "Digit9": {
+        "en": "9",
+        "ru": "9",
+        "RU": "(",
+        "EN": "("
+    },
+    "Digit0": {
+        "en": "0",
+        "ru": "0",
+        "RU": ")",
+        "EN": ")"
+    },
+    "Minus": {
+        "en": "-",
+        "ru": "-",
+        "RU": "_",
+        "EN": "_"
+    },
+    "Equal": {
+        "en": "=",
+        "ru": "=",
+        "RU": "+",
+        "EN": "+"
+    },
+    "Backspace": {
+        "en": "Backspace",
+        "ru": "Backspace",
+        "RU": "Backspace",
+        "EN": "Backspace"
+    },
+    "Tab": {
+        "en": "Tab",
+        "ru": "Tab",
+        "RU": "Tab",
+        "EN": "Tab"
+    },
+    "KeyQ": {
+        "en": "q",
+        "ru": "й",
+        "RU": "Й",
+        "EN": "Q"
+    },
+    "KeyW": {
+        "en": "w",
+        "ru": "ц",
+        "RU": "Ц",
+        "EN": "W"
+    },
+    "KeyE": {
+        "en": "e",
+        "ru": "у",
+        "RU": "У",
+        "EN": "E"
+    },
+    "KeyR": {
+        "en": "r",
+        "ru": "к",
+        "RU": "К",
+        "EN": "R"
+    },
+    "KeyT": {
+        "en": "t",
+        "ru": "е",
+        "RU": "Е",
+        "EN": "T"
+    },
+    "KeyY": {
+        "en": "y",
+        "ru": "н",
+        "RU": "Н",
+        "EN": "Y"
+    },
+    "KeyU": {
+        "en": "u",
+        "ru": "г",
+        "RU": "Г",
+        "EN": "U"
+    },
+    "KeyI": {
+        "en": "i",
+        "ru": "ш",
+        "RU": "Ш",
+        "EN": "I"
+    },
+    "KeyO": {
+        "en": "o",
+        "ru": "щ",
+        "RU": "Щ",
+        "EN": "O"
+    },
+    "KeyP": {
+        "en": "p",
+        "ru": "з",
+        "RU": "З",
+        "EN": "P"
+    },
+    "BracketLeft": {
+        "en": "[",
+        "ru": "х",
+        "RU": "Х",
+        "EN": "{"
+    },
+    "BracketRight": {
+        "en": "]",
+        "ru": "ъ",
+        "RU": "Ъ",
+        "EN": "}"
+    },
+    "Backslash": {
+        "en": "\\",
+        "ru": "\\",
+        "RU": "/",
+        "EN": "|"
+    },
+    "Delete": {
+        "en": "Delete",
+        "ru": "Delete",
+        "RU": "Delete",
+        "EN": "Delete"
+    },
+    "CapsLock": {
+        "en": "CapsLock",
+        "ru": "CapsLock",
+        "RU": "CapsLock",
+        "EN": "CapsLock"
+    },
+    "KeyA": {
+        "en": "a",
+        "ru": "ф",
+        "RU": "Ф",
+        "EN": "A"
+    },
+    "KeyS": {
+        "en": "s",
+        "ru": "ы",
+        "RU": "Ы",
+        "EN": "S"
+    },
+    "KeyD": {
+        "en": "d",
+        "ru": "в",
+        "RU": "В",
+        "EN": "D"
+    },
+    "KeyF": {
+        "en": "f",
+        "ru": "а",
+        "RU": "А",
+        "EN": "F"
+    },
+    "KeyG": {
+        "en": "g",
+        "ru": "п",
+        "RU": "П",
+        "EN": "G"
+    },
+    "KeyH": {
+        "en": "h",
+        "ru": "р",
+        "RU": "Р",
+        "EN": "H"
+    },
+    "KeyJ": {
+        "en": "j",
+        "ru": "о",
+        "RU": "О",
+        "EN": "J"
+    },
+    "KeyK": {
+        "en": "k",
+        "ru": "л",
+        "RU": "Л",
+        "EN": "K"
+    },
+    "KeyL": {
+        "en": "l",
+        "ru": "д",
+        "RU": "Д",
+        "EN": "L"
+    },
+    "Semicolon": {
+        "en": ";",
+        "ru": "ж",
+        "RU": "Ж",
+        "EN": ":"
+    },
+    "Quote": {
+        "en": "'",
+        "ru": "э",
+        "RU": "Э",
+        "EN": "\""
+    },
+    "Enter": {
+        "en": "Enter",
+        "ru": "Enter",
+        "RU": "Enter",
+        "EN": "Enter"
+    },
+    "ShiftLeft": {
+        "en": "Shift",
+        "ru": "Shift",
+        "RU": "Shift",
+        "EN": "Shift"
+    },
+    "KeyZ": {
+        "en": "z",
+        "ru": "я",
+        "RU": "Я",
+        "EN": "Z"
+    },
+    "KeyX": {
+        "en": "x",
+        "ru": "ч",
+        "RU": "Ч",
+        "EN": "X"
+    },
+    "KeyC": {
+        "en": "c",
+        "ru": "с",
+        "RU": "С",
+        "EN": "C"
+    },
+    "KeyV": {
+        "en": "v",
+        "ru": "м",
+        "RU": "М",
+        "EN": "V"
+    },
+    "KeyB": {
+        "en": "b",
+        "ru": "и",
+        "RU": "И",
+        "EN": "B"
+    },
+    "KeyN": {
+        "en": "n",
+        "ru": "т",
+        "RU": "Т",
+        "EN": "N"
+    },
+    "KeyM": {
+        "en": "m",
+        "ru": "ь",
+        "RU": "Ь",
+        "EN": "M"
+    },
+    "Comma": {
+        "en": ",",
+        "ru": "б",
+        "RU": "Б",
+        "EN": "<"
+    },
+    "Period": {
+        "en": ".",
+        "ru": "ю",
+        "RU": "Ю",
+        "EN": ">"
+    },
+    "Slash": {
+        "en": "/",
+        "ru": ".",
+        "RU": ",",
+        "EN": "?"
+    },
+    "ArrowUp": {
+        "en": "ArrowUp",
+        "ru": "ArrowUp",
+        "RU": "ArrowUp",
+        "EN": "ArrowUp"
+    },
+    "ShiftRight": {
+        "en": "Shift",
+        "ru": "Shift",
+        "RU": "Shift",
+        "EN": "Shift"
+    },
+    "ControlLeft": {
+        "en": "Control",
+        "ru": "Control",
+        "RU": "Control",
+        "EN": "Control"
+    },
+    "MetaLeft": {
+        "en": "Meta",
+        "ru": "Meta",
+        "RU": "Meta",
+        "EN": "Meta"
+    },
+    "AltLeft": {
+        "en": "Alt",
+        "ru": "Alt",
+        "RU": "Alt",
+        "EN": "Alt"
+    },
+    "Space": {
+        "en": " ",
+        "ru": " ",
+        "RU": " ",
+        "EN": " "
+    },
+    "AltRight": {
+        "en": "Alt",
+        "ru": "AltGraph",
+        "RU": "AltGraph",
+        "EN": "AltGraph"
+    },
+    "ArrowLeft": {
+        "en": "ArrowLeft",
+        "ru": "ArrowLeft",
+        "RU": "ArrowLeft",
+        "EN": "ArrowLeft"
+    },
+    "ArrowDown": {
+        "en": "ArrowDown",
+        "ru": "ArrowDown",
+        "RU": "ArrowDown",
+        "EN": "ArrowDown"
+    },
+    "ArrowRight": {
+        "en": "ArrowRight",
+        "ru": "ArrowRight",
+        "RU": "ArrowRight",
+        "EN": "ArrowRight"
+    },
+    "ControlRight": {
+        "en": "Control",
+        "ru": "Control",
+        "RU": "Control",
+        "EN": "Control"
+    }
+}
