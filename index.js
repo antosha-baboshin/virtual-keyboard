@@ -39,6 +39,7 @@ addCollection(); */
 
 function createKeyboard(language) {
     let symb = '';
+    keys = document.querySelectorAll('.key');
     for (let key in KEYBOARD) {
         if (language == 'en') {
             if (isCaps) {
@@ -55,8 +56,7 @@ function createKeyboard(language) {
         }
     }
     document.querySelector('#keyboard').innerHTML = symb;
-    keys = document.querySelectorAll('.key');
-};
+}
 
 document.onkeydown = (event) => {
     if (event.code in KEYBOARD) {
@@ -94,7 +94,7 @@ function writeTextByMouse() {
             cursorPosition -= 1;
           }
     } else if (event.target.getAttribute('data') == 'ShiftLeft' || event.target.getAttribute('data') == 'ShiftRight' || event.target.getAttribute('data') == 'ControlLeft' || event.target.getAttribute('data') == 'MetaLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltRight' || event.target.getAttribute('data') == 'ControlRight' || event.target.getAttribute('id') == 'keyboard') {
-        textarea.innerHTML = textarea.innerHTML;
+        textarea.innerHTML;
     } else if (event.target.getAttribute('data') === 'CapsLock') {
         capsKeys();
     } else if (event.target.getAttribute('data') === 'Enter') {
@@ -122,7 +122,7 @@ function writeText(event) {
             cursorPosition -= 1;
           }
     } else if (event.code == 'ShiftLeft' || event.code == 'ShiftRight' || event.code == 'ControlLeft' || event.code == 'MetaLeft' || event.code == 'AltLeft' || event.code == 'AltLeft' || event.code == 'AltRight' || event.code == 'ControlRight') {
-        textarea.innerHTML = textarea.innerHTML;
+        textarea.innerHTML;
     } else if (event.code === 'CapsLock') {
         capsKeys();
     } else if (event.code === 'Enter') {
