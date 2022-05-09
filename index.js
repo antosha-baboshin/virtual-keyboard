@@ -16,6 +16,7 @@ document.body.append(span);
 header.innerHTML = 'Virtual Keyboard';
 span.innerHTML = 'The keyboard is created for Windows<br>Press SHIFT + CTRL to change language'
 div.setAttribute('id', 'keyboard');
+textarea.autofocus = true;
 
 const DEFAULT_LANGUAGE = 'en';
 let language = localStorage.getItem('language') || DEFAULT_LANGUAGE;
@@ -53,6 +54,7 @@ function createKeyboard(language) {
 
 document.onkeydown = function(event) {
     let active_key = document.querySelector(`.key[data='${event.code}']`);
+    console.log(active_key);
     active_key.classList.add('active');
     writeText(event);
     shiftKeys(event);
@@ -81,10 +83,16 @@ keys.forEach((key) => key.addEventListener('mousedown', addActiveOnClick));
 function writeText(event) {
     if (event.code == 'Backspace') {
         textarea.innerHTML = textarea.innerHTML.slice(0, -1);
-    } else if (event.code == 'Tab' || event.code == 'Delete' || event.code == 'Enter' || event.code == 'ShiftLeft' || event.code == 'ShiftRight' || event.code == 'ControlLeft' || event.code == 'MetaLeft' || event.code == 'AltLeft' || event.code == 'AltLeft' || event.code == 'AltRight' || event.code == 'ControlRight') {
+    } else if (event.code == 'ShiftLeft' || event.code == 'ShiftRight' || event.code == 'ControlLeft' || event.code == 'MetaLeft' || event.code == 'AltLeft' || event.code == 'AltLeft' || event.code == 'AltRight' || event.code == 'ControlRight') {
         textarea.innerHTML = textarea.innerHTML;
     } else if (event.code === 'CapsLock') {
         capsKeys();
+    } else if (event.code === 'Enter') {
+        textarea.innerHTML += '\n';
+    } else if (event.code === 'Tab') {
+        textarea.innerHTML += '\t';
+    } else if (event.code === 'Delete') {
+        
     } else {
         let current_key = document.querySelector(`.key[data='${event.code}']`);
         textarea.innerHTML += current_key.innerHTML;
@@ -95,7 +103,7 @@ function shiftKeys(event) {
     keys = document.querySelectorAll('.key');
     if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
         if (language === 'en') {
-            if (q_key.innerHTML === 'q') {
+            if (!isCaps) {
                 keys.forEach((key) => { 
                     key.innerHTML = KEYBOARD[key.getAttribute('data')].EN; 
                 });
@@ -105,7 +113,7 @@ function shiftKeys(event) {
                 });
             }
         } else {
-            if (q_key.innerHTML === 'й') {
+            if (!isCaps) {
                 keys.forEach((key) => { 
                     key.innerHTML = KEYBOARD[key.getAttribute('data')].RU; 
                 });

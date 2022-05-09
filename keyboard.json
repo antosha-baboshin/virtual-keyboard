@@ -168,10 +168,10 @@
         "EN": "|"
     },
     "Delete": {
-        "en": "Delete",
-        "ru": "Delete",
-        "RU": "Delete",
-        "EN": "Delete"
+        "en": "Del",
+        "ru": "Del",
+        "RU": "Del",
+        "EN": "Del"
     },
     "CapsLock": {
         "en": "CapsLock",
@@ -359,6 +359,12 @@
         "RU": "Alt",
         "EN": "Alt"
     },
+    "ControlRight": {
+        "en": "Ctrl",
+        "ru": "Ctrl",
+        "RU": "Ctrl",
+        "EN": "Ctrl"
+    },
     "ArrowLeft": {
         "en": "←",
         "ru": "←",
@@ -376,11 +382,5 @@
         "ru": "→",
         "RU": "→",
         "EN": "→"
-    },
-    "ControlRight": {
-        "en": "Ctrl",
-        "ru": "Ctrl",
-        "RU": "Ctrl",
-        "EN": "Ctrl"
     }
 }
