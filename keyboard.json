@@ -318,10 +318,10 @@
         "EN": "?"
     },
     "ArrowUp": {
-        "en": "ArrowUp",
-        "ru": "ArrowUp",
-        "RU": "ArrowUp",
-        "EN": "ArrowUp"
+        "en": "↑",
+        "ru": "↑",
+        "RU": "↑",
+        "EN": "↑"
     },
     "ShiftRight": {
         "en": "Shift",
@@ -330,16 +330,16 @@
         "EN": "Shift"
     },
     "ControlLeft": {
-        "en": "Control",
-        "ru": "Control",
-        "RU": "Control",
-        "EN": "Control"
+        "en": "Ctrl",
+        "ru": "Ctrl",
+        "RU": "Ctrl",
+        "EN": "Ctrl"
     },
     "MetaLeft": {
-        "en": "Meta",
-        "ru": "Meta",
-        "RU": "Meta",
-        "EN": "Meta"
+        "en": "Win",
+        "ru": "Win",
+        "RU": "Win",
+        "EN": "Win"
     },
     "AltLeft": {
         "en": "Alt",
@@ -355,32 +355,32 @@
     },
     "AltRight": {
         "en": "Alt",
-        "ru": "AltGraph",
-        "RU": "AltGraph",
-        "EN": "AltGraph"
+        "ru": "Alt",
+        "RU": "Alt",
+        "EN": "Alt"
     },
     "ArrowLeft": {
-        "en": "ArrowLeft",
-        "ru": "ArrowLeft",
-        "RU": "ArrowLeft",
-        "EN": "ArrowLeft"
+        "en": "←",
+        "ru": "←",
+        "RU": "←",
+        "EN": "←"
     },
     "ArrowDown": {
-        "en": "ArrowDown",
-        "ru": "ArrowDown",
-        "RU": "ArrowDown",
-        "EN": "ArrowDown"
+        "en": "↓",
+        "ru": "↓",
+        "RU": "↓",
+        "EN": "↓"
     },
     "ArrowRight": {
-        "en": "ArrowRight",
-        "ru": "ArrowRight",
-        "RU": "ArrowRight",
-        "EN": "ArrowRight"
+        "en": "→",
+        "ru": "→",
+        "RU": "→",
+        "EN": "→"
     },
     "ControlRight": {
-        "en": "Control",
-        "ru": "Control",
-        "RU": "Control",
-        "EN": "Control"
+        "en": "Ctrl",
+        "ru": "Ctrl",
+        "RU": "Ctrl",
+        "EN": "Ctrl"
     }
 }
