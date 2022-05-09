@@ -6,6 +6,7 @@ let header = document.createElement('h1');
 let textarea = document.createElement('textarea');
 let div = document.createElement('div');
 let span = document.createElement('span');
+let keys = document.querySelectorAll('.key');
 let isCaps = false;
 
 document.body.append(header);
@@ -50,23 +51,22 @@ function createKeyboard(language) {
         }
     }
     document.querySelector('#keyboard').innerHTML = symb;
+    keys = document.querySelectorAll('.key');
 };
 
-document.onkeydown = function(event) {
+document.onkeydown = (event) => {
     let active_key = document.querySelector(`.key[data='${event.code}']`);
-    console.log(active_key);
     active_key.classList.add('active');
     writeText(event);
     shiftKeys(event);
     changeLanguage(event);
 }
-document.onkeyup = function(event) {
+document.onkeyup = (event) => {
     let active_key = document.querySelector(`.key[data='${event.code}']`);
     active_key.classList.remove('active');
     unshiftKeys(event);
 }
-
-let keys = document.querySelectorAll('.key');
+document.onmousedown = () => { writeTextByMouse() };
 
 keys.forEach((key) => key.addEventListener('mousedown', addActiveOnClick));
 keys.forEach((key) => key.addEventListener('mouseup', removeActiveOnClick));
@@ -76,6 +76,24 @@ function addActiveOnClick() {
 }
 function removeActiveOnClick() {
     event.target.classList.remove('active');
+}
+function writeTextByMouse() {
+    console.log(event.target);
+    if (event.target.getAttribute('data') == 'Backspace') {
+        textarea.innerHTML = textarea.innerHTML.slice(0, -1);
+    } else if (event.target.getAttribute('data') == 'ShiftLeft' || event.target.getAttribute('data') == 'ShiftRight' || event.target.getAttribute('data') == 'ControlLeft' || event.target.getAttribute('data') == 'MetaLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltRight' || event.target.getAttribute('data') == 'ControlRight' || event.target.getAttribute('id') == 'keyboard') {
+        textarea.innerHTML = textarea.innerHTML;
+    } else if (event.target.getAttribute('data') === 'CapsLock') {
+        capsKeys();
+    } else if (event.target.getAttribute('data') === 'Enter') {
+        textarea.innerHTML += '\n';
+    } else if (event.target.getAttribute('data') === 'Tab') {
+        textarea.innerHTML += '\t';
+    } else if (event.target.getAttribute('data') === 'Delete') {
+        
+    } else {
+        textarea.innerHTML += event.target.innerHTML;
+    }
 }
 
 keys.forEach((key) => key.addEventListener('mousedown', addActiveOnClick));
@@ -124,6 +142,7 @@ function shiftKeys(event) {
             }
         }
     }
+
 }
 
 function unshiftKeys(event) {
