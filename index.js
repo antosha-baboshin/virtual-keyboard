@@ -17,11 +17,15 @@ document.body.append(span);
 header.innerHTML = 'Virtual Keyboard';
 span.innerHTML = 'The keyboard is created for Windows<br>Press SHIFT + CTRL to change language'
 div.setAttribute('id', 'keyboard');
-textarea.autofocus = true;
+//textarea.disabled = true;
+//textarea.autofocus = true;
 
 const DEFAULT_LANGUAGE = 'en';
 let language = localStorage.getItem('language') || DEFAULT_LANGUAGE;
 createKeyboard(language);
+
+textarea.focus();
+let cursorPosition = 0;
 
 /* function addCollection() {
     let i = 0;
@@ -55,18 +59,24 @@ function createKeyboard(language) {
 };
 
 document.onkeydown = (event) => {
-    let active_key = document.querySelector(`.key[data='${event.code}']`);
-    active_key.classList.add('active');
-    writeText(event);
-    shiftKeys(event);
-    changeLanguage(event);
+    if (event.code in KEYBOARD) {
+        let active_key = document.querySelector(`.key[data='${event.code}']`);
+        active_key.classList.add('active');
+        writeText(event);
+        shiftKeys(event);
+        changeLanguage(event);
+    }
 }
 document.onkeyup = (event) => {
-    let active_key = document.querySelector(`.key[data='${event.code}']`);
-    active_key.classList.remove('active');
-    unshiftKeys(event);
+    if (event.code in KEYBOARD) {
+        let active_key = document.querySelector(`.key[data='${event.code}']`);
+        active_key.classList.remove('active');
+        unshiftKeys(event);
+    }
 }
-document.onmousedown = () => { writeTextByMouse() };
+
+const KEYBOARD_BLOCK = document.getElementById('keyboard');
+KEYBOARD_BLOCK.onmousedown = () => { writeTextByMouse() };
 
 keys.forEach((key) => key.addEventListener('mousedown', addActiveOnClick));
 keys.forEach((key) => key.addEventListener('mouseup', removeActiveOnClick));
@@ -78,43 +88,57 @@ function removeActiveOnClick() {
     event.target.classList.remove('active');
 }
 function writeTextByMouse() {
-    console.log(event.target);
     if (event.target.getAttribute('data') == 'Backspace') {
-        textarea.innerHTML = textarea.innerHTML.slice(0, -1);
+        if (cursorPosition > 0) {
+            textarea.innerHTML = textarea.innerHTML.substring(0, textarea.selectionStart - 1) + textarea.innerHTML.substring(textarea.selectionEnd);
+            cursorPosition -= 1;
+          }
     } else if (event.target.getAttribute('data') == 'ShiftLeft' || event.target.getAttribute('data') == 'ShiftRight' || event.target.getAttribute('data') == 'ControlLeft' || event.target.getAttribute('data') == 'MetaLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltLeft' || event.target.getAttribute('data') == 'AltRight' || event.target.getAttribute('data') == 'ControlRight' || event.target.getAttribute('id') == 'keyboard') {
         textarea.innerHTML = textarea.innerHTML;
     } else if (event.target.getAttribute('data') === 'CapsLock') {
         capsKeys();
     } else if (event.target.getAttribute('data') === 'Enter') {
-        textarea.innerHTML += '\n';
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + '\n' + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     } else if (event.target.getAttribute('data') === 'Tab') {
-        textarea.innerHTML += '\t';
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + '\t' + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     } else if (event.target.getAttribute('data') === 'Delete') {
-        
+        textarea.innerHTML = textarea.innerHTML.substring(0, textarea.selectionStart) + textarea.innerHTML.substring(textarea.selectionEnd + 1);
     } else {
-        textarea.innerHTML += event.target.innerHTML;
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + event.target.innerHTML + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     }
+    updateTextarea();
 }
 
 keys.forEach((key) => key.addEventListener('mousedown', addActiveOnClick));
 
 function writeText(event) {
+    event.preventDefault();
     if (event.code == 'Backspace') {
-        textarea.innerHTML = textarea.innerHTML.slice(0, -1);
+        if (cursorPosition > 0) {
+            textarea.innerHTML = textarea.innerHTML.substring(0, textarea.selectionStart - 1) + textarea.innerHTML.substring(textarea.selectionEnd);
+            cursorPosition -= 1;
+          }
     } else if (event.code == 'ShiftLeft' || event.code == 'ShiftRight' || event.code == 'ControlLeft' || event.code == 'MetaLeft' || event.code == 'AltLeft' || event.code == 'AltLeft' || event.code == 'AltRight' || event.code == 'ControlRight') {
         textarea.innerHTML = textarea.innerHTML;
     } else if (event.code === 'CapsLock') {
         capsKeys();
     } else if (event.code === 'Enter') {
-        textarea.innerHTML += '\n';
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + '\n' + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     } else if (event.code === 'Tab') {
-        textarea.innerHTML += '\t';
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + '\t' + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     } else if (event.code === 'Delete') {
-        
+        textarea.innerHTML = textarea.innerHTML.substring(0, textarea.selectionStart) + textarea.innerHTML.substring(textarea.selectionEnd + 1);
     } else {
         let current_key = document.querySelector(`.key[data='${event.code}']`);
-        textarea.innerHTML += current_key.innerHTML;
+        textarea.innerHTML = textarea.innerHTML.substring(0, cursorPosition) + current_key.innerHTML + textarea.innerHTML.substring(cursorPosition);
+        cursorPosition += 1;
     }
+    updateTextarea();
 }
 
 function shiftKeys(event) {
@@ -229,3 +253,12 @@ function capsKeys() {
         }
     }
 }
+
+function updateTextarea() {
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = cursorPosition;
+  }
+
+textarea.addEventListener('click', () => {
+  cursorPosition = textarea.selectionStart;
+});
