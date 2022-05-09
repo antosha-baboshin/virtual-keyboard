@@ -17,8 +17,6 @@ document.body.append(span);
 header.innerHTML = 'Virtual Keyboard';
 span.innerHTML = 'The keyboard is created for Windows<br>Press SHIFT + CTRL to change language'
 div.setAttribute('id', 'keyboard');
-//textarea.disabled = true;
-//textarea.autofocus = true;
 
 const DEFAULT_LANGUAGE = 'en';
 let language = localStorage.getItem('language') || DEFAULT_LANGUAGE;
