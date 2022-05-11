@@ -168,6 +168,7 @@ function shiftKeys(event) {
 }
 
 function unshiftKeys(event) {
+    keys = document.querySelectorAll('.key');
     if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
         if (language === 'en') {
             if (q_key.innerHTML === 'q') {
