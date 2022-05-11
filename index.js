@@ -25,16 +25,6 @@ createKeyboard(language);
 textarea.focus();
 let cursorPosition = 0;
 
-/* function addCollection() {
-    let i = 0;
-    for (let key in KEYBOARD_COLLECTION) {
-        KEYBOARD_COLLECTION[key].EN = KEYBOARD_RU[i];
-        i += 1;
-    }
-    console.log(KEYBOARD_COLLECTION);
-};
-addCollection(); */
-
 function createKeyboard(language) {
     let symb = '';
     keys = document.querySelectorAll('.key');
@@ -171,7 +161,7 @@ function unshiftKeys(event) {
     keys = document.querySelectorAll('.key');
     if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
         if (language === 'en') {
-            if (q_key.innerHTML === 'q') {
+            if (isCaps) {
                 keys.forEach((key) => { 
                     key.innerHTML = KEYBOARD[key.getAttribute('data')].EN; 
                 });
@@ -181,7 +171,7 @@ function unshiftKeys(event) {
                 });
             }
         } else {
-            if (q_key.innerHTML === 'й') {
+            if (isCaps) {
                 keys.forEach((key) => { 
                     key.innerHTML = KEYBOARD[key.getAttribute('data')].RU; 
                 });
@@ -221,8 +211,6 @@ function changeLanguage(event) {
     }
     localStorage.setItem('language', language);
 }
-
-let q_key = document.querySelector('.key[data="KeyQ"]');
 
 function capsKeys() {
     keys = document.querySelectorAll('.key');
