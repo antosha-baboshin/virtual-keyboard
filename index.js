@@ -140,10 +140,9 @@ function writeTextByMouse() {
     const endSel = textarea.textContent.substring(textarea.selectionEnd + 1);
     textarea.textContent = startSel + endSel;
   } else {
-    const CURRENT_KEY = document.querySelector(`.key[data='${event.code}']`);
     const startCursorPos = textarea.textContent.substring(0, cursorPosition);
     const currentCursorPos = textarea.textContent.substring(cursorPosition);
-    textarea.textContent = startCursorPos + CURRENT_KEY.textContent + currentCursorPos;
+    textarea.textContent = startCursorPos + event.target.textContent + currentCursorPos;
     cursorPosition += 1;
   }
   return updateTextarea();
