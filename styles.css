@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-image: url('./assets/images/background.jpg');
+}
+
+h1 {
+    color: black;
+    background-color: #C9D6DF;
+    text-align: center;
+    border: 1px solid black;
+    width: 500px;
+    margin: 0;
+}
+
+span {
+    color: black;
+    background-color: #C9D6DF;
+    text-align: center;
+    border: 1px solid black;
+    width: 500px;
+    line-height: 20px;
+}
+
+textarea {
+    width: 650px;
+    height: 200px;
+    font-size: 18px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: #03194a;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 0 1px green,0 0 2px green,0 0 2px green,0 0 2px green;
+    letter-spacing: 2px;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+    height: 220px;
+    border: 1px solid black;
+    padding: 10px;
+    gap: 5px;
+    background-color: #C9D6DF;
+    border-radius: 10px;
+}
+
+.key {
+    border: 1px solid white;
+    background-color: #F0F5F9;
+    width: 35px;
+    height: 30px;
+    float:left;
+    text-align: center;
+    line-height: 30px;
+    transition: transform 0.15s;
+    transform-style: preserve-3d;
+}
+
+.key::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: gray;
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px white;
+    transform: translate3d(0, 0.3em, -0.2em);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .key:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+  }
+
+  .key:active {
+    background: #ffe9e9;
+    transform: translate(0em, 0.2em);
+  }
+  .key:active::before {
+    transform: translate3d(0, 0, -1em);
+  }
+
+
+.key[data='Backspace'], .key[data='CapsLock'], .key[data='Enter'] {
+    width: 90px;
+    border: 1px solid gray;
+}
+
+.key[data='Tab'], .key[data='ControlLeft'], .key[data='ControlRight'], .key[data='AltLeft'], .key[data='AltRight'], .key[data='MetaLeft'] {
+    width: 55px;
+    border: 1px solid gray;
+}
+
+.key[data='ShiftLeft'] {
+    width: 120px;  
+    border: 1px solid gray;
+}
+.key[data='Space'] {
+    width: 200px;
+    border: 1px solid gray;
+}
+
+.key[data='Delete'], .key[data='ArrowUp'], .key[data='ArrowDown'], .key[data='ArrowLeft'], .key[data='ArrowRight'], .key[data='ShiftRight'], .key[data='Backquote'] {
+    border: 1px solid gray;
+}
+
+.key.active {
+    background-color: aquamarine;
+    color: black;
+    transform: translate(0em, 0.2em);
+}
+
+.key.active::before {
+    box-shadow: 0 0 0 2px #b18597;
+    transform: translate3d(0, 0, -1em);
+  }
